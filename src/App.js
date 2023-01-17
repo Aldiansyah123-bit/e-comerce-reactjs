@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+// import { useEffect } from "react";
+// import { useSelector } from "react-redux";
 
-function App() {
+import { ConfigProvider } from "antd";
+import Router from "./router/Router"
+
+export default function App() {
+  // Redux
+  // const customise = useSelector((state) => state.customise);
+
+  // // Lang
+  // useEffect(() => {
+  //   document.querySelector("html").setAttribute("lang", customise.language);
+  // }, [customise]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ConfigProvider>
+      {/* <ConfigProvider direction={customise.direction}> */}
+      <Router />
+    </ConfigProvider>
   );
 }
-
-export default App;
